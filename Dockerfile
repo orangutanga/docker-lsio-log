@@ -1,5 +1,5 @@
-FROM mhart/alpine-node:latest
+FROM mhart/alpine-node-auto
 EXPOSE 8080
 MAINTAINER Sanket Bajoria <bajoriasanket@gmail.com>
-RUN node install -g scullog
-RUN node --harmony /usr/lib/node_modules/scullog/server/index.js -p 8080 -d / 
+RUN npm install -g scullog
+CMD ["scullog", "-d", "/", "-p", "8080"]
